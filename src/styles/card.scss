@@ -1,0 +1,21 @@
+.card{
+    width: 100%;
+    background-color: burlywood;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    .img-container{
+        width: 45%;
+        img{
+            height: auto;
+            width: 100%;
+        }
+    }
+    .card-info{
+        width: 55%;
+        margin: 0 20px;
+
+    }
+
+}

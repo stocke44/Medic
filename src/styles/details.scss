@@ -1,0 +1,24 @@
+.detail{
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: #f4f4f8;       
+
+
+    .top-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+            max-width:50%
+        }
+
+    }
+    .text-content{
+        p{
+            margin:0;
+            padding-bottom: 12px;
+        }
+        padding: 0 20px;
+    }
+
+}

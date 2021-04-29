@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect} from 'react';
+import './styles/App.scss';
+import {Diagnosis, Medic} from './components/Diagnosis'
+import Sidenav from './components/Sidenav';
+import Card from './components/Card';
+import getAuth from './components/Auth';
 
 function App() {
+  const [value , setValue] = useState([]);
+  const [submit, setSubmit] = useState(false);
+
+  // useEffect(()=>{
+  //   async function tokenGetter() {
+  //     const repToken = await getAuth();
+  //     localStorage.setItem('token' , repToken)
+  //     setT(repToken);
+  //     console.log(t);
+  //   }
+
+  //   tokenGetter();
+    
+  //   return ()=>{
+  //     localStorage.removeItem('token')
+  //   }
+  // },[])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Diagnosis.Provider value={{value,setValue}}>
+      <section className="app row container">
+        <Medic.Provider value={{submit,setSubmit}}>
+          <Sidenav/>
+          <Card token="test"/>          
+        </Medic.Provider>
+      </section>
+    </Diagnosis.Provider>
+
   );
 }
 

@@ -1,0 +1,35 @@
+.healthy-nav{
+    background-color: #F4F4F8;
+    margin-bottom: 48px;
+    .nav-wrapper{
+        margin: 0 auto;
+        @media screen and (min-width:1400px){
+            max-width: 1400px;
+        }        
+        .nav-logo{
+            img{
+                height: 90px;
+                width: 90px;
+            }
+        }    
+        .nav-list{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-search{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            form{
+                input{
+                    width: 15em;
+                    height: auto;
+                }
+            }
+        }       
+    }
+
+
+
+}
