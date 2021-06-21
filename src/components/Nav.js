@@ -14,6 +14,7 @@ function Navigation (){
                     <a href="/" className="nav-item">About</a>
                     <a href="/" className="nav-item">Login</a>
                     <a href="/" className="nav-item">Sign Up</a>
+                    <a href="/search" className="nav-item">Search</a>
                 </div>              
             </div>
 

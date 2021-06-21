@@ -75,24 +75,24 @@ function Sidenav(){
                 </label>
                 <label className="search">
                         <input list="symptoms" id="searchInput" placeholder="Search Symptoms" onKeyUp={(e)=> {setSearch(e.target.value)}}/>
-                        <button type="submit"  onClick={(e) => {e.preventDefault(); results(e)}}>Search</button>
+                        <button className="button" type="submit"  onClick={(e) => {e.preventDefault(); results(e)}}>Search</button>
                 </label>
             </form>
             {symptoms.length > 0 ? <h5>Symptoms</h5>: null}
             {symptoms.map((sym)=> {
-                return (<p key={sym.ID} onClick={(e) => { deleteSymp( sym ) } }>
+                return (<div key={sym.ID} onClick={(e) => { deleteSymp( sym ) } }>
                     
-                    {sym.Name}                           
-                </p>)
+                    {sym.Name} <span></span>                          
+                </div>)
             })}
             {symList.length > 0 ? <h5>Search Results</h5>: null}
             {symList.map((sym)=> {
-                return (<p key={sym.Name} onClick={(e) => { selectedSymp( sym ) } }>
+                return (<div key={sym.Name} onClick={(e) => { selectedSymp( sym ) } }>
                     
-                    {sym.Name}                           
-                </p>)
+                    {sym.Name} <span></span>                           
+                </div>)
             })}
-            <button onClick={(e)=>{setSubmit(true)}}>Submit</button>
+            <button className="button" onClick={(e)=>{setSubmit(true)}}>Submit</button>
         </div>
 
     )

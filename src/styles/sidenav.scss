@@ -1,4 +1,46 @@
+
 .side-nav{
     background-color: #f4f4f8;
     border-radius: 25px;
+    height: 100%;
+
+    form{
+        margin-top: 15px;
+        .button{
+            margin-top: 15px;
+        }
+        label{
+            @media only screen and (max-width: 800px){
+                display: block;
+            }
+        }
+    }
+    .button{
+        margin-bottom: 15px;
+        padding: 4px 12px;
+    }
+    div{  
+        
+        width: fit-content;
+        padding: 5px 25px 5px 5px;
+        margin-bottom: 10px;
+        background-color: aqua ;
+        border: aqua 2px solid;
+        border-radius: 15px;
+        cursor: pointer;
+        span{
+            width: 11px;
+            height: 11px;
+            position: absolute;
+            margin: 8px 5px;
+            border: 1px solid solid;
+            border-radius: 10px;
+            background: url('/images/close_icon_black.svg');
+        }
+
+    }
+    @media only screen and (max-width: 800px){
+      margin-bottom: 15px;
+    }
+
 }

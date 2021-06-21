@@ -1,3 +1,11 @@
+@mixin phone{
+  @media only screen and (max-width: 400px){
+    @content
+  }
+}  
+
+
+
 .button{
   color: white;
   box-shadow: 2px 2px black;
@@ -8,13 +16,38 @@
 }
 
 h1{
-  font-size: 28px;
+  font-size:  32px;
+  @media only screen and (max-width: 1199px){
+    font-size:28px;
+  }
 }
 
 h2{
-  font-size: 26px;
+  font-size: 28px;
+  @media only screen and (max-width: 1199px){
+    font-size:24px;
+  }
+  @include phone{
+    font-size: 20px;
+  }
 }
 
 h3{
   font-size: 24px;
+  
+  @media only screen and (max-width: 1199px){
+    font-size:20px;
+  }
+  @include phone {
+    font-size: 16px;
+  }
+  
+}
+
+h4{
+  font-size: 20px;
+}
+
+h5{
+  font-size: 20px;
 }

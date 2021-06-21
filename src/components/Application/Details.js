@@ -2,7 +2,8 @@ import {useState, useEffect, useContext} from 'react';
 import { Issue } from '../Diagnosis';
 import getAuth from '../Auth';
 import defaultImg from '../../images/heartDisease.png';
-import '../../styles/details.scss'
+import URL from '../../data/response.json';
+import '../../styles/details.scss';
 
 function Detail(props){
     const {idInfo} = useContext(Issue);
@@ -22,11 +23,22 @@ function Detail(props){
         setDiagnosis(data);
         console.log(data)
     }
+
+    function findImg(key){
+        let src = '';
+        URL.forEach((obj)=>{
+            if (key === obj.ID){
+                src = obj.URL
+            }
+        })
+        return src
+    }
+    
     
     return (
         <section className="detail">
             <div className="top-container">
-                <img src={defaultImg} alt="default" ></img>
+                <img src={findImg(idInfo)} alt="default" ></img>
                 <div className="name">
                     <h4>Medical Name: {diagnosis.Name}</h4>
                     <h5>Common Name: {diagnosis.ProfName}</h5>    

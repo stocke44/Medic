@@ -1,3 +1,9 @@
+@mixin phone{
+    @media only screen and (max-width: 400px){
+      @content
+    }
+  }  
+
 .card{
     width: 100%;
     background-color: burlywood;
@@ -5,6 +11,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    margin-bottom: 16px;
     .img-container{
         width: 45%;
         img{
@@ -15,7 +22,34 @@
     .card-info{
         width: 55%;
         margin: 0 20px;
+        @include phone{
+            margin: 10px 20px; 
+        }
+        .button-box{
+            margin : 16px 0 16px 0;
+        }
+        h3{
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+        }
+    }
+    @include phone {
+        flex-direction: column;
+        .img-container{
+            margin-top: 15px;
+            width: 60%;
+            img{
+                border: #2a7fba 4px solid;
+                border-radius: 60px;                
+            }
 
+        }
+        .card-info{
+            width: auto;
+            text-align: center;
+        }
     }
 
 }
