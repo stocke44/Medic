@@ -6,8 +6,18 @@
 
     form{
         margin-top: 15px;
-        .button{
-            margin-top: 15px;
+        .icon{
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-image: url('/images/search.svg');
+            height: 30px;
+            width: 20px;
+            border: none;
+            position: absolute;
+            bottom: 0;
+            top: 80px;
+            right: 78px;
         }
         label{
             @media only screen and (max-width: 800px){

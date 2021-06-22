@@ -75,7 +75,7 @@ function Sidenav(){
                 </label>
                 <label className="search">
                         <input list="symptoms" id="searchInput" placeholder="Search Symptoms" onKeyUp={(e)=> {setSearch(e.target.value)}}/>
-                        <button className="button" type="submit"  onClick={(e) => {e.preventDefault(); results(e)}}>Search</button>
+                        <button className="icon" type="submit"  onClick={(e) => {e.preventDefault(); results(e)}}></button>
                 </label>
             </form>
             {symptoms.length > 0 ? <h5>Symptoms</h5>: null}
