@@ -1,5 +1,5 @@
 import {useState, useContext, useEffect} from 'react';
-import {Diagnosis,Medic} from './Diagnosis';
+import {Diagnosis, Medic, Gender} from './Diagnosis';
 import SYMPTOMS from './Symptoms.json';
 
 
@@ -8,6 +8,7 @@ import SYMPTOMS from './Symptoms.json';
 function Sidenav(){
     const {value , setValue}= useContext(Diagnosis);
     const { submit, setSubmit} = useContext(Medic);
+    const {gender, setGender} =useContext(Gender);
     const [sex, updateSex] = useState('');
     const [symptoms, setSymptoms] = useState([]);
     const [ search, setSearch] = useState("");
@@ -67,7 +68,7 @@ function Sidenav(){
                     <select 
                      id="sex"
                      value={sex}
-                     onChange={(e)=>{updateSex(e.target.value)}}>
+                     onChange={(e)=>{updateSex(e.target.value);setGender(e.target.value);}}>
                         <option key='none' value="none">--Choose--</option>
                         <option key='male' value="male">Male</option>
                         <option key='female'value="female">Female</option>
