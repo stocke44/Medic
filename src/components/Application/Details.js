@@ -3,7 +3,7 @@ import { Issue } from '../Diagnosis';
 import getAuth from '../Auth';
 import defaultImg from '../../images/heartDisease.png';
 import URL from '../../data/response.json';
-import '../../styles/details.scss';
+
 
 function Detail(props){
     const {idInfo} = useContext(Issue);

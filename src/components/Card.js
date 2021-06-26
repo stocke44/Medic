@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 import authToken from './Auth';
 import getAuth from './Auth';
 import defaultImg from '../images/heartDisease.png';
-import '../styles/card.scss';
+
 
 function Cards (props){
     const {setIdInfo} = useContext(Issue);

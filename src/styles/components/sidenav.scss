@@ -18,6 +18,17 @@
             bottom: 0;
             top: 80px;
             right: 78px;
+            @include laptopDown{
+                right: 33px;
+            }
+            @include tabletp{
+                right: 71%;
+            }
+            @include phone{
+                right: 0;
+                left: 180px;
+            }
+
         }
         label{
             @media only screen and (max-width: 800px){

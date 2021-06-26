@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import ReactDOM from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './styles/index.scss';
+import './styles/App.scss';
 import App from './App';
 import Detail from './components/Application/Details';
 import Footer from './components/Footer';

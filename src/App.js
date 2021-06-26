@@ -1,5 +1,4 @@
 import { useState, useEffect} from 'react';
-import './styles/App.scss';
 import {Diagnosis, Medic} from './components/Diagnosis'
 import Sidenav from './components/Sidenav';
 import Card from './components/Card';

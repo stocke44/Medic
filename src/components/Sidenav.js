@@ -1,7 +1,7 @@
 import {useState, useContext, useEffect} from 'react';
 import {Diagnosis,Medic} from './Diagnosis';
 import SYMPTOMS from './Symptoms.json';
-import '../styles/sidenav.scss';
+
 
 
 

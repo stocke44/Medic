@@ -1,3 +1,10 @@
+@import 'global/global.scss';
+@import 'global/variables.scss';
+@import 'components/sidenav.scss';
+@import 'components/card.scss';
+@import 'components/details.scss';
+
+
 .app {
   margin: 48px auto 0 auto;
   display: flex;
