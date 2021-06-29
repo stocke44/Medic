@@ -1,5 +1,5 @@
 import {useState, useContext, useEffect} from 'react';
-import {Diagnosis, Medic, Gender} from './Diagnosis';
+import {Diagnosis, Medic, Gender, Age} from './Diagnosis';
 import SYMPTOMS from './Symptoms.json';
 
 
@@ -9,6 +9,7 @@ function Sidenav(){
     const {value , setValue}= useContext(Diagnosis);
     const { submit, setSubmit} = useContext(Medic);
     const {gender, setGender} =useContext(Gender);
+    const {age,setAge} = useContext(Age);
     const [sex, updateSex] = useState('');
     const [symptoms, setSymptoms] = useState([]);
     const [ search, setSearch] = useState("");
@@ -63,17 +64,23 @@ function Sidenav(){
     return (
         <div className="side-nav col-lg-3">
             <form>
-                <label htmlFor="sex">
-                    <h5>Sex</h5>
-                    <select 
-                     id="sex"
-                     value={sex}
-                     onChange={(e)=>{updateSex(e.target.value);setGender(e.target.value);}}>
-                        <option key='none' value="none">--Choose--</option>
-                        <option key='male' value="male">Male</option>
-                        <option key='female'value="female">Female</option>
-                    </select>
-                </label>
+                <div >
+                    <label htmlFor="sex">
+                        <h5>Sex</h5>
+                        <select 
+                        id="sex"
+                        value={sex}
+                        onChange={(e)=>{updateSex(e.target.value);setGender(e.target.value);}}>
+                            <option key='none' value="none">--Choose--</option>
+                            <option key='male' value="male">Male</option>
+                            <option key='female'value="female">Female</option>
+                        </select>
+                    </label>
+                    <label className="age">
+                        <h5>Age</h5>
+                        <input type="number" onChange={(e)=>{setAge(e.target.value)}} ></input>
+                    </label>
+                </div>                    
                 <label className="search">
                         <input list="symptoms" id="searchInput" placeholder="Search Symptoms" onKeyUp={(e)=> {setSearch(e.target.value)}}/>
                         <button className="icon" type="submit"  onClick={(e) => {e.preventDefault(); results(e)}}></button>
@@ -81,19 +88,19 @@ function Sidenav(){
             </form>
             {symptoms.length > 0 ? <h5>Symptoms</h5>: null}
             {symptoms.map((sym)=> {
-                return (<div key={sym.ID} onClick={(e) => { deleteSymp( sym ) } }>
+                return (<div key={sym.ID} className="results" onClick={(e) => { deleteSymp( sym ) } }>
                     
                     {sym.Name} <span></span>                          
                 </div>)
             })}
             {symList.length > 0 ? <h5>Search Results</h5>: null}
             {symList.map((sym)=> {
-                return (<div key={sym.Name} onClick={(e) => { selectedSymp( sym ) } }>
+                return (<div key={sym.Name} className="results" onClick={(e) => { selectedSymp( sym ) } }>
                     
                     {sym.Name} <span></span>                           
                 </div>)
             })}
-            <button className="button" onClick={(e)=>{setSubmit(true)}}>Submit</button>
+            <button className="button" onClick={(e)=>{if(symList.length>0 && gender !="none"){setSubmit(true)}}}>Submit</button>
         </div>
 
     )

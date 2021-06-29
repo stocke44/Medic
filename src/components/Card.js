@@ -1,5 +1,5 @@
 import {useState, useEffect,useContext} from 'react';
-import {Diagnosis, Issue, Medic, Gender} from './Diagnosis';
+import {Diagnosis, Issue, Medic, Gender, Age} from './Diagnosis';
 import {Link} from 'react-router-dom';
 import authToken from './Auth';
 import getAuth from './Auth';
@@ -10,6 +10,7 @@ function Cards (props){
     const {setIdInfo} = useContext(Issue);
     const {value}= useContext(Diagnosis);
     const {gender} = useContext(Gender);
+    const {age} =useContext(Age);
     const {submit, setSubmit} = useContext(Medic);
     let [diagnosis,setDiagnosis] = useState([]);
 
@@ -24,10 +25,10 @@ function Cards (props){
     },[submit])
 
     async function getDiagnosisInfo (key){
-        let age = 1970;
-        let sex = 'male'
+        let current_year = new Date();
+        let birth_year = current_year.getFullYear() - age ;
         let categorie = 'diagnosis';
-        let request = await fetch(`https://sandbox-healthservice.priaid.ch/${categorie}?token=${key}&symptoms=[${value}]&year_of_birth=${age}&gender=${gender}&language=en-gb` );
+        let request = await fetch(`https://sandbox-healthservice.priaid.ch/${categorie}?token=${key}&symptoms=[${value}]&year_of_birth=${birth_year}&gender=${gender}&language=en-gb` );
         let data = await request.json();     
         setDiagnosis(data);
    
