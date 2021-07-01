@@ -25,10 +25,7 @@
                 right: 33px;
             }
             @include tabletp{
-                right: 71%;
-            }
-            @include phone{
-                right: 0;
+                right: 0px;
                 left: 180px;
             }
 
