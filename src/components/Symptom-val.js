@@ -1,12 +1,33 @@
-function Form_error(values){
-    let errors = {}
-    if (symList.length === 0){
-        errors.symptoms == "Symptoms must be selected"
+function Form_error(age,list,sex){
+    let messageList = {
+        single: "Symptoms",
+        double: "Age",
+        triple: "Sex"
+    };
+
+    let message = "";
+    let totalErrors =  0;
+
+    if (list.length === 0){
+        message += "Symptoms, "
+        totalErrors++
     }
 
-    if (gender === "none"){
-        errors.gender = "Sex is required"
+    if (sex === "none" && totalErrors > 0){
+        message += "Sex, "
+        totalErrors++
+    }else if(sex === "none"){
+        message += "Sex "
+        totalErrors++
     }
+
+    if (age === 0 && totalErrors > 0){
+        message += "and Age "
+    }else if(age === 0){
+        message += "Age "
+    }
+
+    return message.length ==0 ? message:message += "must be selected" ;
 }
 
 export default Form_error;

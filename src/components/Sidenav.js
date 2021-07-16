@@ -1,5 +1,6 @@
 import {useState, useContext, useEffect} from 'react';
 import {Diagnosis, Medic, Gender, Age} from './Diagnosis';
+import Form_error from './Symptom-val';
 import SYMPTOMS from './Symptoms.json';
 
 
@@ -11,6 +12,7 @@ function Sidenav(){
     const {gender, setGender} =useContext(Gender);
     const {age,setAge} = useContext(Age);
     const [sex, updateSex] = useState('');
+    const [error, setError] = useState('');
     const [symptoms, setSymptoms] = useState([]);
     const [ search, setSearch] = useState("");
     const [symList, setSymList] = useState([]);
@@ -100,7 +102,9 @@ function Sidenav(){
                     {sym.Name} <span></span>                           
                 </div>)
             })}
-            <button className="button" onClick={(e)=>{if(symList.length>0 && gender !="none"){setSubmit(true)}}}>Submit</button>
+            {error.length >0 ? <div>{error}</div>:null}
+            <button className="button" onClick={(e)=>{
+                setError(Form_error(age,symptoms,gender)) ; if(symList.length>0 && gender !="none"){setSubmit(true)}}}>Submit</button>
         </div>
 
     )
