@@ -8,17 +8,43 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 20px 70px;
+
         img{
+            border-radius: .25rem;
             max-width:50%
         }
 
+        .name{
+            padding-left: 15px;
+        }
+
+
+
+        @include phone { 
+            flex-direction: column;
+            padding: 20px 20px 0px 20px; 
+            img{
+                max-width: 84%;
+            }
+            .name{ 
+                padding: 20px 0 0 0;
+            }
+
+        }
+                @include tabletp {
+            padding: 20px 40px;
+        }
     }
     .text-content{
         p{
             margin:0;
             padding-bottom: 12px;
         }
-        padding: 0 20px;
+        padding: 10px 70px;
+        @include tabletp {
+            padding: 10px 40px;
+        }
     }
 
 }

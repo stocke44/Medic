@@ -21,13 +21,11 @@ function Form_error(age,list,sex){
         totalErrors++
     }
 
-    if (age === 0 && totalErrors > 0){
-        message += "and Age "
-    }else if(age === 0){
+    if(age.length === 0 ){
         message += "Age "
     }
 
-    return message.length ==0 ? message:message += "must be selected" ;
+    return message.length ==0 ? message: "The Following must Be Selected: " + message ;
 }
 
 export default Form_error;

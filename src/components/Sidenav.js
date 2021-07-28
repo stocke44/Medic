@@ -48,6 +48,7 @@ function Sidenav(){
     ));
     }
 
+
     
     // useEffect(()=>{
     //     getSymptomsInfo();
@@ -80,7 +81,7 @@ function Sidenav(){
                     </label>
                     <label className="age">
                         <h5>Age</h5>
-                        <input type="number" onChange={(e)=>{setAge(e.target.value)}} ></input>
+                        <input type="number" min="0" onChange={(e)=>{setAge(e.target.value) ; console.log(typeof(e.target.value));}} ></input>
                     </label>
                 </div>                    
                 <label className="search">

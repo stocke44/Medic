@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import authToken from './Auth';
 import getAuth from './Auth';
 import defaultImg from '../images/heartDisease.png';
+import URL from '../data/response.json';
 
 
 function Cards (props){
@@ -24,6 +25,16 @@ function Cards (props){
         
     },[submit])
 
+    function findImg(key){
+        let src = '';
+        URL.forEach((obj)=>{
+            if (key === obj.ID){
+                src = obj.URL
+            }
+        })
+        return src
+    }
+
     async function getDiagnosisInfo (key){
         let current_year = new Date();
         let birth_year = current_year.getFullYear() - age ;
@@ -41,11 +52,11 @@ function Cards (props){
                 diagnosis.map((data)=>(
                     <div className="card" key={data.Issue.Name}>
                         <div className="img-container">
-                            <img src={defaultImg} alt="default" ></img>
+                            <img src={findImg(data.Issue.ID)} alt="default" ></img>
                         </div>
                         <div className="card-info"  >
                             <h2>{data.Issue.Name}</h2>
-                            <h3>{data.Issue.IcdName}</h3>
+                            <p>{data.Issue.IcdName}</p>
                             <div className="button-box">
                                 <Link to={`/details/${data.Issue.Name.replace(/ /g,"_")}`} onClick={e => setIdInfo(data.Issue.ID)} className="button">
                                     Click Here

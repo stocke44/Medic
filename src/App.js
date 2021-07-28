@@ -8,7 +8,7 @@ function App() {
   const [value , setValue] = useState([]);
   const [submit, setSubmit] = useState(false);
   const [gender, setGender] = useState('none');
-  const [age,setAge] = useState(0);
+  const [age,setAge] = useState('');
 
   // useEffect(()=>{
   //   async function tokenGetter() {

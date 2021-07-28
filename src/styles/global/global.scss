@@ -1,11 +1,3 @@
-@mixin phone{
-  @media only screen and (max-width: 400px){
-    @content
-  }
-}  
-
-
-
 .button{
   color: white;
   box-shadow: 2px 2px black;
