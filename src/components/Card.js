@@ -1,9 +1,6 @@
 import {useState, useEffect,useContext} from 'react';
 import {Diagnosis, Issue, Medic, Gender, Age} from './Diagnosis';
 import {Link} from 'react-router-dom';
-import authToken from './Auth';
-import getAuth from './Auth';
-import defaultImg from '../images/heartDisease.png';
 import URL from '../data/response.json';
 
 

@@ -21,12 +21,15 @@
             bottom: 0;
             top: 80px;
             right: 78px;
-            @include laptopDown{
+            @media only screen and (max-width: 1199px){
                 right: 33px;
             }
             @include tabletp{
                 right: 0px;
                 left: 180px;
+            }
+            @include phone {
+                top: 75px;
             }
 
         }
@@ -40,6 +43,9 @@
             input{
                 height: 25px;
                 width: inherit;
+            }
+            @media only screen and (min-width:1023px) and (max-width: 1199px){
+                padding-left: 12px;
             }
         }
     }

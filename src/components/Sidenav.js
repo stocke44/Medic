@@ -1,4 +1,4 @@
-import {useState, useContext, useEffect} from 'react';
+import {useState, useContext} from 'react';
 import {Diagnosis, Medic, Gender, Age} from './Diagnosis';
 import Form_error from './Symptom-val';
 import SYMPTOMS from './Symptoms.json';
@@ -7,8 +7,8 @@ import SYMPTOMS from './Symptoms.json';
 
 
 function Sidenav(){
-    const {value , setValue}= useContext(Diagnosis);
-    const { submit, setSubmit} = useContext(Medic);
+    const {setValue}= useContext(Diagnosis);
+    const {setSubmit} = useContext(Medic);
     const {gender, setGender} =useContext(Gender);
     const {age,setAge} = useContext(Age);
     const [sex, updateSex] = useState('');

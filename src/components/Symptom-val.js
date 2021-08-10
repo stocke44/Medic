@@ -1,10 +1,4 @@
 function Form_error(age,list,sex){
-    let messageList = {
-        single: "Symptoms",
-        double: "Age",
-        triple: "Sex"
-    };
-
     let message = "";
     let totalErrors =  0;
 
@@ -25,7 +19,7 @@ function Form_error(age,list,sex){
         message += "Age "
     }
 
-    return message.length ==0 ? message: "The Following must Be Selected: " + message ;
+    return message.length === 0 ? message: "The Following must Be Selected: " + message ;
 }
 
 export default Form_error;
