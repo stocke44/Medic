@@ -1,8 +1,45 @@
 .hero-banner{
     height: 600px;
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: 48px;
+    @include laptopDown{
+        height:480px;
+    }
+    @include tabletp{
+        height: 400px;
+    }
+    @include phone{  
+        height:400px;
+    }
     .hero-img{
-
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        &::after{
+            display: block;
+            position: absolute;
+            background: #bdc3c7;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #2c3e50, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            opacity: .6;
+            top: 0;
+            height: 600px;
+            width: 100%;
+            content: '';
+            @include laptopDown{
+                height:480px;
+            }
+            @include tabletp{
+                height: 400px;
+            }
+            @include phone{  
+                height:400px;
+            }
+        }
         img{
             height: 100%;
             width: 100%;
@@ -10,7 +47,6 @@
         }
     }
     .hero-text{
-        position: relative;
-        top: 50%;
+        z-index: 2;
     }
 }

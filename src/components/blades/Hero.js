@@ -5,7 +5,7 @@ function Hero(props){
             <div className="hero-img">
                 <img src={image} alt={alt}></img>  
             </div>
-            <div classsName="hero-text">
+            <div className="hero-text">
                 <h1>{title}</h1>
                 <h2>{subtitle}</h2>
             </div>
