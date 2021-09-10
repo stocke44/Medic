@@ -12,7 +12,7 @@
         height: 400px;
     }
     @include phone{  
-        height:400px;
+        height:380px;
     }
     .hero-img{
         position: absolute;
@@ -37,16 +37,25 @@
                 height: 400px;
             }
             @include phone{  
-                height:400px;
+                height:380px;
+                background: black;
             }
         }
         img{
             height: 100%;
             width: 100%;
             object-fit: cover;
+            @include phone{
+                opacity: 0;
+            }
         }
     }
     .hero-text{
         z-index: 2;
+        color: white;
+        text-align: center;
+        @include phone{   
+            margin-left: 15px;
+        }
     }
 }

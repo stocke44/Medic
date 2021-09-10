@@ -12,6 +12,12 @@ h1{
   @media only screen and (max-width: 1199px){
     font-size:28px;
   }
+  @include tabletp {
+    font-size: 24px;
+  }
+  @include phone{
+    font-size: 20px;
+  }
 }
 
 h2{
@@ -19,8 +25,11 @@ h2{
   @media only screen and (max-width: 1199px){
     font-size:24px;
   }
-  @include phone{
+  @include tabletp{
     font-size: 20px;
+  }
+  @include phone{
+    font-size: 16px;
   }
 }
 
