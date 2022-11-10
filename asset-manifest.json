@@ -1,27 +1,27 @@
 {
   "files": {
     "main.css": "/Medic/static/css/main.e0ca9e22.chunk.css",
-    "main.js": "/Medic/static/js/main.86a57993.chunk.js",
-    "main.js.map": "/Medic/static/js/main.86a57993.chunk.js.map",
+    "main.js": "/Medic/static/js/main.1c21589c.chunk.js",
+    "main.js.map": "/Medic/static/js/main.1c21589c.chunk.js.map",
     "runtime-main.js": "/Medic/static/js/runtime-main.01f80336.js",
     "runtime-main.js.map": "/Medic/static/js/runtime-main.01f80336.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/Medic/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.77784c6f.chunk.js": "/Medic/static/js/2.77784c6f.chunk.js",
-    "static/js/2.77784c6f.chunk.js.map": "/Medic/static/js/2.77784c6f.chunk.js.map",
+    "static/js/2.1184f0ae.chunk.js": "/Medic/static/js/2.1184f0ae.chunk.js",
+    "static/js/2.1184f0ae.chunk.js.map": "/Medic/static/js/2.1184f0ae.chunk.js.map",
     "static/js/3.4f97bf29.chunk.js": "/Medic/static/js/3.4f97bf29.chunk.js",
     "static/js/3.4f97bf29.chunk.js.map": "/Medic/static/js/3.4f97bf29.chunk.js.map",
     "index.html": "/Medic/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/Medic/static/css/2.4c97ca4f.chunk.css.map",
     "static/css/main.e0ca9e22.chunk.css.map": "/Medic/static/css/main.e0ca9e22.chunk.css.map",
-    "static/js/2.77784c6f.chunk.js.LICENSE.txt": "/Medic/static/js/2.77784c6f.chunk.js.LICENSE.txt",
+    "static/js/2.1184f0ae.chunk.js.LICENSE.txt": "/Medic/static/js/2.1184f0ae.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/Medic/static/media/search.1ce8b2c4.svg",
     "static/media/heartDisease.7f1ce0d8.png": "/Medic/static/media/heartDisease.7f1ce0d8.png"
   },
   "entrypoints": [
     "static/js/runtime-main.01f80336.js",
     "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.77784c6f.chunk.js",
+    "static/js/2.1184f0ae.chunk.js",
     "static/css/main.e0ca9e22.chunk.css",
-    "static/js/main.86a57993.chunk.js"
+    "static/js/main.1c21589c.chunk.js"
   ]
 }
