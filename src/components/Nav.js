@@ -1,6 +1,6 @@
 import '../styles/nav.scss';
 import logo from '../images/logo.png';
-
+import {Link} from 'react-router-dom'
 function Navigation (){
 
 
@@ -11,10 +11,10 @@ function Navigation (){
                     <img src={logo} alt="Helpfully Healthy" ></img>
                 </div>
                 <div className="col-lg-10 nav-list">
-                    <a href="/" className="nav-item">About</a>
-                    <a href="/" className="nav-item">Login</a>
-                    <a href="/" className="nav-item">Sign Up</a>
-                    <a href="/search" className="nav-item">Search</a>
+                    <Link to="/search" className='nav-item'>About</Link>
+                    <Link to="/search" className='nav-item'>Login</Link>
+                    <Link to="/search" className='nav-item'>Signup</Link>
+                    <Link to="/search" className='nav-item'>Search</Link>
                 </div>              
             </div>
 

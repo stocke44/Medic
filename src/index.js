@@ -34,7 +34,7 @@ function Index(){
   },[])
 
   return(
-    <Router>
+    <Router basename='/Medic'>
     <Navigation/>
 
 
