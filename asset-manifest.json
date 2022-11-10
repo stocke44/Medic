@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/Medic/static/css/main.e0ca9e22.chunk.css",
-    "main.js": "/Medic/static/js/main.1c21589c.chunk.js",
-    "main.js.map": "/Medic/static/js/main.1c21589c.chunk.js.map",
+    "main.js": "/Medic/static/js/main.7d00d205.chunk.js",
+    "main.js.map": "/Medic/static/js/main.7d00d205.chunk.js.map",
     "runtime-main.js": "/Medic/static/js/runtime-main.01f80336.js",
     "runtime-main.js.map": "/Medic/static/js/runtime-main.01f80336.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/Medic/static/css/2.4c97ca4f.chunk.css",
@@ -22,6 +22,6 @@
     "static/css/2.4c97ca4f.chunk.css",
     "static/js/2.1184f0ae.chunk.js",
     "static/css/main.e0ca9e22.chunk.css",
-    "static/js/main.1c21589c.chunk.js"
+    "static/js/main.7d00d205.chunk.js"
   ]
 }
