@@ -11,11 +11,13 @@ function Cards (props){
     const {age} =useContext(Age);
     const {submit, setSubmit} = useContext(Medic);
     let [diagnosis,setDiagnosis] = useState([]);
+    let [message,setMessage] = useState(<h5>On Submit Results Will show here</h5>)
 
     useEffect(()=>{
 
         if(submit){
             const token = localStorage.getItem('token');
+            setMessage(<div className='bars-8'></div>)
             getDiagnosisInfo(token); 
             setSubmit(false);
         }
@@ -37,7 +39,9 @@ function Cards (props){
         let birth_year = current_year.getFullYear() - age ;
         let categorie = 'diagnosis';
         let request = await fetch(`https://sandbox-healthservice.priaid.ch/${categorie}?token=${key}&symptoms=[${value}]&year_of_birth=${birth_year}&gender=${gender}&language=en-gb` );
-        let data = await request.json();     
+        let data = await request.json();
+        if(data.length === 0){setMessage(<h5>No results Found</h5>)} 
+        console.log(data)     
         setDiagnosis(data);
    
     }
@@ -45,7 +49,8 @@ function Cards (props){
 
     return(
         <div className="card-container col-lg-9">
-            { diagnosis.length === 0 ? <h5>No Data Found</h5>:
+
+            { diagnosis.length === 0 ? message:
                 diagnosis.map((data)=>(
                     <div className="card" key={data.Issue.Name}>
                         <div className="img-container">
