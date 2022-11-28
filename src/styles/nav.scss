@@ -16,7 +16,14 @@
         .nav-list{
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: start;
+            .nav-item{
+                color: #000;
+                &:hover{
+                    color: #2a7fba;
+                    text-decoration: none;
+                }
+            }
         }
         .nav-search{
             display: flex;

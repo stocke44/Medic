@@ -5,6 +5,11 @@
   padding: 8px 15px;
   border-radius: 5px;
   border: 1px black solid;
+  &:hover{
+    background-color: white;
+    color: #2a7fba;
+    text-decoration: none;
+  }
 }
 
 h1{

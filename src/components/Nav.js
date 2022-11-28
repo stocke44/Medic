@@ -7,11 +7,13 @@ function Navigation (){
     return (
         <nav className="healthy-nav ">
             <div className="nav-wrapper row container-fluid">
-                <div className="col-lg-2 nav-logo">
-                    <img src={logo} alt="Helpfully Healthy" ></img>
+                <div className="col-md-2 col-4 nav-logo">
+                    <Link to="/">
+                        <img src={logo} alt="Helpfully Healthy" />
+                    </Link>
                 </div>
-                <div className="col-lg-10 nav-list">
-                    <Link to="/search" className='nav-item'>Search</Link>
+                <div className="col-md-10 col-8 nav-list">
+                    <h3><Link to="/search" className='nav-item'>Search</Link></h3>
                 </div>              
             </div>
 
