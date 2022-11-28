@@ -1,5 +1,6 @@
+import { useEffect } from 'react';
 import {useState, useContext} from 'react';
-import {Diagnosis, Medic, Gender, Age} from './Diagnosis';
+import {Diagnosis, Medic, Gender, Age, SymListContext, SymptomsContext} from './Diagnosis';
 import Form_error from './Symptom-val';
 import SYMPTOMS from './Symptoms.json';
 
@@ -7,8 +8,10 @@ import SYMPTOMS from './Symptoms.json';
 
 
 function Sidenav(){
-    const {setValue}= useContext(Diagnosis);
+    const {value,setValue}= useContext(Diagnosis);
     const {setSubmit} = useContext(Medic);
+    const {symListContext, setSymlistContext} =useContext(SymListContext);
+    const {symContext, setSymContext} =useContext(SymptomsContext);
     const {gender, setGender} =useContext(Gender);
     const {age,setAge} = useContext(Age);
     const [sex, updateSex] = useState('');
@@ -32,10 +35,19 @@ function Sidenav(){
         setSymList(state => state.concat(symSearch))
     }
 
+    function saveSymp(){
+        setSymContext(symptoms)
+        setSymlistContext(symList)
+    }
+
     function selectedSymp(sym){
+        console.log(value)
         if(!symptoms.includes(sym)){
             setValue(state => state.concat(sym.ID));
             setSymptoms(state => state.concat(sym));
+            setSymList((state) => state.filter((value)=>
+            sym !== value
+        ));
         }   
     }
     
@@ -43,27 +55,27 @@ function Sidenav(){
         setSymptoms((state) => state.filter((value)=>
             sym !== value
         ));
+        setSymList(state => state.concat(sym).sort((a, b) => a.Name.localeCompare(b.Name)));
+
         setValue((state) => state.filter((value)=>
         sym.ID !== value
     ));
     }
+    
+    useEffect(()=>{
+        if(symListContext.length > 0){
+            setSymList(symListContext)
+        }
+        if(symContext.length > 0){
+            setSymptoms(symContext)
+        }
+        if(gender.length > 0){
+            updateSex(gender)
+        }
 
+    },[])
 
     
-    // useEffect(()=>{
-    //     getSymptomsInfo();
-    // },[])
-
-    // async function getSymptomsInfo (){
-       
-    //     let categorie = 'symptoms';
-    //     let request = await fetch('/data/Symptoms.json');
-        
-    //     // let request = await fetch(`https://sandbox-healthservice.priaid.ch/${categorie}?token=${key}&language=en-gb` );
-    //     let data = await request.json();    
-    //     setSymptoms(data); 
-    // }
-
     return (
         <div className="side-nav col-lg-3">
             <form>
@@ -73,7 +85,10 @@ function Sidenav(){
                         <select 
                         id="sex"
                         value={sex}
-                        onChange={(e)=>{updateSex(e.target.value);setGender(e.target.value);}}>
+                        onChange={(e)=>{
+                            updateSex(e.target.value);
+                            setGender(e.target.value);
+                            }}>
                             <option key='none' value="none">--Choose--</option>
                             <option key='male' value="male">Male</option>
                             <option key='female'value="female">Female</option>
@@ -81,7 +96,7 @@ function Sidenav(){
                     </label>
                     <label className="age">
                         <h5>Age</h5>
-                        <input type="number" min="0" onChange={(e)=>{setAge(e.target.value) ; console.log(typeof(e.target.value));}} ></input>
+                        <input defaultValue={age} type="number" min="0" onChange={(e)=>{setAge(e.target.value) ;}} ></input>
                     </label>
                 </div>                    
                 <label className="search">
@@ -105,7 +120,7 @@ function Sidenav(){
             })}
             {error.length >0 ? <div>{error}</div>:null}
             <button className="button" onClick={(e)=>{
-                setError(Form_error(age,symptoms,gender)) ; if(symList.length>0 && gender !="none"){setSubmit(true)}}}>Submit</button>
+                setError(Form_error(age,symptoms,gender)) ; if(symptoms.length>0 && gender !="none"){setSubmit(true);saveSymp();}}}>Submit</button>
         </div>
 
     )

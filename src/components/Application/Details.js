@@ -8,6 +8,7 @@ import React from 'react';
 function Detail(props){
     const {idInfo} = useContext(Issue);
     const [diagnosis, setDiagnosis] = useState([]);
+    let [path,setPath] = useState();
     let token = localStorage.getItem('token');
     let [load,setLoad] = useState(true)
     
@@ -18,8 +19,10 @@ function Detail(props){
 
     },[])
 
-    async function getInfo (){    
-        let request = await fetch(`https://sandbox-healthservice.priaid.ch/issues/${idInfo}/info?token=${token}&format=json&language=en-gb` );
+    async function getInfo (){
+        let path = parseInt(window.location.pathname.split("/")[3])
+        setPath(path)
+        let request = await fetch(`https://sandbox-healthservice.priaid.ch/issues/${path}/info?token=${token}&format=json&language=en-gb` );
         let data = await request.json();     
         setDiagnosis(data);
         setLoad(false)
@@ -43,7 +46,7 @@ function Detail(props){
             {load ?<div className='bars-8'></div>:  
                 <section className="detail">
                     <div className="top-container">
-                    <img src={findImg(idInfo)} alt="default" ></img>
+                    <img src={findImg(path)} alt="default" ></img>
                         <div className="name">
                             <h4>Medical Name: {diagnosis.Name}</h4>
                             <h5>Common Name: {diagnosis.ProfName}</h5>    

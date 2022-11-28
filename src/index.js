@@ -13,12 +13,18 @@ import Detail from './components/Application/Details';
 import Footer from './components/Footer';
 import Navigation from './components/Nav';
 import Home from './components/Homepage';
-import {Issue} from './components/Diagnosis'
+import {Issue,Diagnosis,Gender,Age,SymListContext,SymptomsContext} from './components/Diagnosis'
 import reportWebVitals from './reportWebVitals';
 import getAuth from './components/Auth';
 
 function Index(){
   const [idInfo , setIdInfo] = useState([]);
+  const [value , setValue] = useState([]);
+  const [gender, setGender] = useState('none');
+  const [age,setAge] = useState('');
+  const [symContext, setSymContext] = useState([]);
+  const [symListContext, setSymlistContext] = useState([]);
+
 
   useEffect(()=>{
     async function tokenGetter() {
@@ -39,17 +45,29 @@ function Index(){
 
 
     <Issue.Provider value={{idInfo,setIdInfo}}>
-      <Switch>      
-        <Route path="/search">
-          <App /> 
-        </Route>
-        <Route path="/details/:id">
-          <Detail /> 
-        </Route>
-        <Route path="/">
-          <Home/>
-        </Route>          
-      </Switch>    
+      <Diagnosis.Provider value={{value,setValue}}>
+        <Age.Provider value = {{age,setAge}}>
+          <Gender.Provider value={{gender,setGender}}>
+          <SymListContext.Provider value={{symListContext, setSymlistContext}}> 
+            <SymptomsContext.Provider value={{symContext, setSymContext}}>
+              <Switch>      
+                <Route path="/search">
+                  <App /> 
+                </Route>
+                <Route path="/details/:param/:id">
+                  <Detail /> 
+                </Route>
+                <Route path="/">
+                  <Home/>
+                </Route>          
+              </Switch> 
+            </SymptomsContext.Provider>
+          </SymListContext.Provider>
+ 
+          </Gender.Provider>        
+        </Age.Provider>
+      </Diagnosis.Provider>
+    
     </Issue.Provider>
 
 

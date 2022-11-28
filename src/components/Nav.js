@@ -11,9 +11,6 @@ function Navigation (){
                     <img src={logo} alt="Helpfully Healthy" ></img>
                 </div>
                 <div className="col-lg-10 nav-list">
-                    <Link to="/search" className='nav-item'>About</Link>
-                    <Link to="/search" className='nav-item'>Login</Link>
-                    <Link to="/search" className='nav-item'>Signup</Link>
                     <Link to="/search" className='nav-item'>Search</Link>
                 </div>              
             </div>

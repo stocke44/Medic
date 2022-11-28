@@ -5,7 +5,7 @@ import URL from '../data/response.json';
 
 
 function Cards (props){
-    const {setIdInfo} = useContext(Issue);
+    const {id,setIdInfo} = useContext(Issue);
     const {value}= useContext(Diagnosis);
     const {gender} = useContext(Gender);
     const {age} =useContext(Age);
@@ -60,7 +60,7 @@ function Cards (props){
                             <h2>{data.Issue.Name}</h2>
                             <p>{data.Issue.IcdName}</p>
                             <div className="button-box">
-                                <Link to={`/details/${data.Issue.Name.replace(/ /g,"_")}`} onClick={e => setIdInfo(data.Issue.ID)} className="button">
+                                <Link to={`/details/${data.Issue.ID}/${data.Issue.Name.replace(/ /g,"_")}`} onClick={e => setIdInfo(data.Issue.ID)} className="button">
                                     Click Here
                                 </Link>   
                             </div>
