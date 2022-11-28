@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/Medic/static/css/main.43f75046.chunk.css",
-    "main.js": "/Medic/static/js/main.38761c5a.chunk.js",
-    "main.js.map": "/Medic/static/js/main.38761c5a.chunk.js.map",
+    "main.css": "/Medic/static/css/main.fd12e4c5.chunk.css",
+    "main.js": "/Medic/static/js/main.783bce7a.chunk.js",
+    "main.js.map": "/Medic/static/js/main.783bce7a.chunk.js.map",
     "runtime-main.js": "/Medic/static/js/runtime-main.01f80336.js",
     "runtime-main.js.map": "/Medic/static/js/runtime-main.01f80336.js.map",
     "static/css/2.4c97ca4f.chunk.css": "/Medic/static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.1240329a.chunk.js": "/Medic/static/js/2.1240329a.chunk.js",
-    "static/js/2.1240329a.chunk.js.map": "/Medic/static/js/2.1240329a.chunk.js.map",
+    "static/js/2.2b2ca7e5.chunk.js": "/Medic/static/js/2.2b2ca7e5.chunk.js",
+    "static/js/2.2b2ca7e5.chunk.js.map": "/Medic/static/js/2.2b2ca7e5.chunk.js.map",
     "static/js/3.4f97bf29.chunk.js": "/Medic/static/js/3.4f97bf29.chunk.js",
     "static/js/3.4f97bf29.chunk.js.map": "/Medic/static/js/3.4f97bf29.chunk.js.map",
     "index.html": "/Medic/index.html",
     "static/css/2.4c97ca4f.chunk.css.map": "/Medic/static/css/2.4c97ca4f.chunk.css.map",
-    "static/css/main.43f75046.chunk.css.map": "/Medic/static/css/main.43f75046.chunk.css.map",
-    "static/js/2.1240329a.chunk.js.LICENSE.txt": "/Medic/static/js/2.1240329a.chunk.js.LICENSE.txt",
+    "static/css/main.fd12e4c5.chunk.css.map": "/Medic/static/css/main.fd12e4c5.chunk.css.map",
+    "static/js/2.2b2ca7e5.chunk.js.LICENSE.txt": "/Medic/static/js/2.2b2ca7e5.chunk.js.LICENSE.txt",
     "static/media/App.scss": "/Medic/static/media/search.1ce8b2c4.svg",
     "static/media/heartDisease.7f1ce0d8.png": "/Medic/static/media/heartDisease.7f1ce0d8.png"
   },
   "entrypoints": [
     "static/js/runtime-main.01f80336.js",
     "static/css/2.4c97ca4f.chunk.css",
-    "static/js/2.1240329a.chunk.js",
-    "static/css/main.43f75046.chunk.css",
-    "static/js/main.38761c5a.chunk.js"
+    "static/js/2.2b2ca7e5.chunk.js",
+    "static/css/main.fd12e4c5.chunk.css",
+    "static/js/main.783bce7a.chunk.js"
   ]
 }
